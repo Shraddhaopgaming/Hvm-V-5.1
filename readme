@@ -1,15 +1,15 @@
 # INSTALL HVM V5.1 IN IDX
 ``` apt update && apt install snapd -y && sudo snap install lxd  && apt install unzip -y && apt install git -y && apt install python3-pip -y  ```
-` git clone https://github.com/Shraddhaopgaming/Hvm-V-5.1 `
-`cd hvm`
-`unzip hvm.zip`
-` cd hvm`
-``` pip install -r requirements.txt ```
-``` pip install flask ```
-``` pip install flask_login```
-```echo 'export PATH=$PATH:/snap/bin' >> /root/.bashrc
-source /root/.bashrc```
-```lxd init```
+``git clone https://github.com/Shraddhaopgaming/Hvm-V-5.1 ``
+``cd hvm``
+``unzip hvm.zip``
+``cd hvm``
+`` pip install -r requirements.txt ``
+`` pip install flask ``
+`` pip install flask_login``
+``echo 'export PATH=$PATH:/snap/bin' >> /root/.bashrc
+source /root/.bashrc``
+``lxd init``
 
 nano /etc/systemd/system/hvm.service
 [Unit]
