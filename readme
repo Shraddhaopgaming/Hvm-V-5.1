@@ -1,0 +1,36 @@
+# INSTALL HVM V5.1 IN IDX
+``` apt update && apt install snapd -y && sudo snap install lxd  && apt install unzip -y && apt install git -y && apt install python3-pip -y  ```
+` git clone https://github.com/Shraddhaopgaming/Hvm-V-5.1 `
+`cd hvm`
+`unzip hvm.zip`
+` cd hvm`
+``` pip install -r requirements.txt ```
+``` pip install flask ```
+``` pip install flask_login```
+```echo 'export PATH=$PATH:/snap/bin' >> /root/.bashrc
+source /root/.bashrc```
+```lxd init```
+
+nano /etc/systemd/system/hvm.service
+[Unit]
+Description=HVM Python Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /root/hvm/hvm/hvm.py
+WorkingDirectory=/root/hvm/hvm
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+systemctl daemon-reload
+systemctl enable hvm
+systemctl start hvm 
+systemctl restart hvm
+
+#Username: admin
+#password: admin
